@@ -1,0 +1,76 @@
+{% extends "layouts.html" %}
+{% load static %}
+{% block content %}
+from django import template
+
+register = template.Library()
+
+@register.filter
+def get_at_index(list, index):
+    return list[index]
+    <section class="content">
+        <div class="container-fluid">
+            <!-- START ASSOCIATION RULES TABLE -->
+            {% if ListOfDictOfRules %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-filled">
+                        <div class="panel-heading">
+                            <div class="panel-tools">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                            </div>
+                            <h2 class="m-b-none" style="color: #1bbf89; font-size: 22px">
+                                Preview Dataset After Data Cleaning Process
+                            </h2>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                The data displayed in the table below is data that has passed the Data Cleaning process which is Handle Missing Value with Fill Forward and Fill Backward Method
+                            </p>
+                            <br>
+                            
+    {{ forloop.counter }}
+
+                            <table id="tableExample5" class="table table-striped table-hover table-responsive">
+                                    <thead>
+                                    <tr>
+                                        {% for i in nama_kolomnya_data_transformation %}
+                       
+                                        <th>{{i}}</th>
+                                        {% endfor %}
+                                       </tr>
+                                    </thead>
+                                        <tbody>
+                                                    
+                                            
+                                                
+                                       
+                                                
+                                                    <tr>
+                                                            
+                                                            {% for j in datanya_data_transformation %}
+                                                            
+                                                            
+                                                                <td>
+                                                                
+                                                                    {{j.0}}
+                                                                    
+                                                                </td>
+                                                            
+                                                           
+                                                       
+                                                            {% endfor %}                    
+                                                    </tr>
+                                                 
+                                        
+                                        </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <!-- END ASSOCIATION RULES TABLE -->
+        </div>
+    </section>
+{% endblock content %}

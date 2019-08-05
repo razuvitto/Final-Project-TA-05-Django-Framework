@@ -1,0 +1,368 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
+
+    <!-- Page title -->
+    <title>Penambangan Rules | TA - 05</title>
+
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href={%static "assets/vendor/fontawesome/css/font-awesome.css" %}/>
+    <link rel="stylesheet" href={%static "assets/vendor/animate.css/animate.css" %}/>
+    <link rel="stylesheet" href={%static "assets/vendor/bootstrap/css/bootstrap.css" %}/>
+    <link rel="stylesheet" href={%static "assets/vendor/toastr/toastr.min.css" %}/>
+    <link rel="stylesheet" href={%static "assets/vendor/datatables/datatables.min.css" %}/>
+
+    <!-- App styles -->
+    <link rel="stylesheet" href={%static "assets/styles/pe-icons/pe-icon-7-stroke.css" %}/>
+    <link rel="stylesheet" href={%static "assets/styles/pe-icons/helper.css" %}/>
+    <link rel="stylesheet" href={%static "assets/styles/stroke-icons/style.css" %}/>
+    <link rel="stylesheet" href={%static "assets/styles/style.css" %}/>
+    <link rel="stylesheet" href={%static "assets/styles/stroke-icons/stroke.eot" %}/>
+    <link rel="stylesheet" href={%static "assets/styles/stroke-icons/stroke.ttf" %}/>
+    <link rel="stylesheet" href={%static "assets/styles/stroke-icons/stroke.woff" %}/>
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header-->
+        <nav class="navbar navbar-expand-md navbar-default fixed-top">
+            <div class="navbar-header">
+                <div id="mobile-menu">
+                    <div class="left-nav-toggle">
+                        <a href="#">
+                            <i class="stroke-hamburgermenu"></i>
+                        </a>
+                    </div>
+                </div>
+                <a class="navbar-brand" href="/">
+                    FPGrowth
+                    <span>TA-05</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="left-nav-toggle">
+                    <a href="">
+                        <i class="stroke-hamburgermenu"></i>
+                    </a>
+                </div>
+                <form class="navbar-form mr-auto">
+                    <input type="text" class="form-control" placeholder="Search data for analysis" style="width: 175px">
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item profil-link">
+                        <a href="login.html">
+                            <span class="profile-address"> </span>
+                            <img src={%static "assets/images/profile.jpg"  %} class="rounded-circle" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End header-->
+
+        <!-- Navigation-->
+        <aside class="navigation">
+            <nav>
+                <ul class="nav luna-nav">
+                    <li class="nav-category">
+                        Main
+                    </li>
+                    <li class="active">
+                        <a href="/">Dashboard</a>
+                    </li>
+                    <li class="nav-category">
+                        Algorithm
+                    </li>
+                    <li>
+                        <a href="#uielements" data-toggle="collapse" aria-expanded="false">
+                            FP-Growth<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                        </a>
+                        <ul id="uielements" class="nav nav-second collapse">
+                            <li><a href="panels.html">Frequent Pattern</a></li>
+                            <li><a href="panels.html">Closed Pattern</a></li>
+                            <li><a href="panels.html">Rules</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#tables" data-toggle="collapse" aria-expanded="false">
+                            Genetic Algorithm<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                        </a>
+                        <ul id="tables" class="nav nav-second collapse">
+                            <li><a href="tableStyles.html">Optimize Rules</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-category">
+                        Documentation
+                    </li>
+                    <li>
+                        <a href="#extras" data-toggle="collapse" aria-expanded="false">
+                            Data Preprocessing <span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                        </a>
+                        <ul id="extras" class="nav nav-second collapse">
+                            <li><a href="profile.html">Data Cleaning</a></li>
+                            <li><a href="contacts.html">Data Selection</a></li>
+                            <li><a href="projects.html">Data Transformation</a></li>
+                            <li><a href="projects.html">Correlation Metrics</a></li>
+                            <li><a href="projects.html">Documentation Data</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-info">
+                        <i class="pe pe-7s-shield text-accent"></i>
+    
+                        <div class="m-t-xs">
+                            <span class="c-white">TA-05</span> All right reserverd.
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="view-header">
+                        <div class="pull-right text-right" style="line-height: 14px">
+                            <small><br><br> <span class="c-white">v.1.1</span></small>
+                        </div>
+                        <div class="header-icon">
+                            <i class="pe page-header-icon pe-7s-shield"></i>
+                        </div>
+                        <div class="header-title">
+                            <h3 class="m-b-xs">Final Project TA-05</h3>
+                            <small>
+                                Penambangan AdaptIf Aturan Asosiasi untuk Data Spatio-Temporal menggunakan Algoritma Optimized Closed FP-Growth Studi Kasus pada Bencana Alam
+                            </small>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <!-- Start Upload File -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-filled">
+                        <div class="panel-heading">
+                            <div class="panel-tools">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                            </div>
+                            File inputs
+                        </div>
+                        <div class="panel-body">
+                            <form action="" method="post">
+                            {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p>To upload dataset, please click button below</p>
+                                        <label class="btn btn-accent" for="file-selector2">
+                                            <input id="file-selector2" type="file" name="dataset_name" required="True" style="display:none;"
+                                                onchange="$('#upload-file-info2').html($(this).val());">
+                                            <span id="upload-file-info2">Upload file</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type=submit class="btn btn-w-md btn-success btn-rounded"> <span class="glyphicon glyphicon-upload" style="margin-right:5px;"></span>Upload </button>
+                                    </div>
+                                </div>
+                            </form> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Upload File -->
+            {% if LengthOfDataset %}
+            <div class="row">
+                <div class="col-lg-2 col-xs-6">
+                        <div class="panel panel-filled">
+                            <div class="panel-body">
+                                <h2 class="m-b-none" style="color: #f6a821">
+                                    {{LengthOfDataset}}
+                                    <!-- 262 <span class="slight"><i class="fa fa-play fa-rotate-270 text-warning"> </i> +18%</span> -->
+                                </h2>
+                                <div class="small">Total Transaction</div>
+                                <!-- <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Updated: <span class="c-white">04:00am</span></div> -->
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-lg-2 col-xs-6">
+                    <div class="panel panel-filled">
+
+                        <div class="panel-body">
+                            <h2 class="m-b-none" style="color: #f6a821">
+                                {{LengthOfFrequentPattern}}
+                                <!-- <span class="slight"><i class="fa fa-play fa-rotate-270 text-warning"> </i> +{{DecreasePresentation}}%</span> -->
+                            </h2>
+
+                            <div class="small">Total Frequent Pattern</div>
+                            <!-- <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Updated: <span class="c-white">10:22pm</span></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xs-6">
+                    <div class="panel panel-filled">
+                        <div class="panel-body">
+                            <h2 class="m-b-none" style="color: #f6a821">
+                                {{LengthOfClosedPattern}} <span class="slight"><i class="fa fa-play fa-rotate-90 c-white"> </i> {{DecreasePresentation}}%</span>
+                            </h2>
+
+                            <div class="small">Total Closed Pattern</div>
+                            <!-- <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Updated: <span class="c-white">9:10am</span></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xs-6">
+                    <div class="panel panel-filled">
+                        <div class="panel-body">
+                            <h2 class="m-b-none" style="color: #f6a821">
+                                {{LengthOfAssociationRules}}
+                                <!-- 262 <span class="slight"><i class="fa fa-play fa-rotate-270 text-warning"> </i> +56%</span> -->
+                            </h2>
+
+                            <div class="small">Total Association Rules</div>
+                            <!-- <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Updated: <span class="c-white">05:42pm</span></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xs-6">
+                    <div class="panel panel-filled">
+                        <div class="panel-body">
+                            <h2 class="m-b-none" style="color: #f6a821">
+                                {{LengthOfAssociationRulesAfterOptimization}}
+                                <!-- 262 <span class="slight"><i class="fa fa-play fa-rotate-270 text-warning"> </i> +18%</span> -->
+                            </h2>
+
+                            <div class="small">Total Association Rules After Optimization</div>
+                            <!-- <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Updated: <span class="c-white">04:00am</span></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xs-6">
+                    <div class="panel panel-filled">
+                        <div class="panel-body">
+                            <h2 class="m-b-none" style="color: #1bbf89">
+                                Time Execution
+                                <!-- 262 <span class="slight"><i class="fa fa-play fa-rotate-270 text-warning"> </i> +18%</span> -->
+                            </h2>
+                            <div class="small">{{TimeExecution}} second </div>
+                            <!-- <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Updated: <span class="c-white">04:00am</span></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- START FREQUENT PATTERN TABLE -->
+            {% if HTMLFrequentPattern %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-filled">
+                        <div class="panel-heading">
+                            <div class="panel-tools">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                            Frequent Pattern Table
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                The Frequent Pattern Will Shown Below
+                            </p>
+                            <table id="tableExample3" class="table table-striped table-hover table-responsive-sm">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                            {% for x in HTMLFrequentPattern  %}
+                                            <tr>
+                                                <td>{{x.0}}</td>
+                                                <td>{{x.1}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                        <tfoot>
+                                                <tr>
+                                               
+                                                </tr>
+                                            </tfoot>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <!-- END FREQUENT PATTERN TABLE -->
+            
+            <!-- <div class="row">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <div class="panel-body h-200 list">
+                                    <div class="stats-title">
+                                        <h4><i class="fa fa-bar-chart text-warning" aria-hidden="true"></i> Traffic source</h4>
+                                    </div>
+                                    <div class="small">
+                                        Total users from the beginning of activity. See detailed charts for more information locations and traffic source.
+                                    </div>
+
+                                    <div class="sparkline3"></div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <small class="stat-label">Today</small>
+                                            <h4 class="m-t-xs">170,20 <i class="fa fa-level-up text-warning"></i></h4>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <small class="stat-label">Last month %</small>
+                                            <h4 class="m-t-xs">%20,20 <i class="fa fa-level-down c-white"></i></h4>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <small class="stat-label">Year</small>
+                                            <h4 class="m-t-xs">2180,50 <i class="fa fa-level-up text-warning"></i></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+</div>
+    
+    
+
+<!-- Vendor scripts -->
+<script src={%static "assets/vendor/pacejs/pace.min.js" %}></script>
+<script src={%static "assets/vendor/jquery/dist/jquery.min.js" %}></script>
+<script src={%static "assets/vendor/bootstrap/js/bootstrap.min.js" %}></script>
+<script src={%static "assets/vendor/toastr/toastr.min.js" %}></script>
+<script src={%static "assets/vendor/sparkline/index.js" %}></script>
+<script src={%static "assets/vendor/flot/jquery.flot.min.js" %}></script>
+<script src={%static "assets/vendor/flot/jquery.flot.resize.min.js" %}></script>
+<script src={%static "assets/vendor/flot/jquery.flot.spline.js" %}></script>
+<script src={%static "assets/vendor/datatables/datatables.min.js" %}></script>
+<script src={%static "assets/vendor/datatables/dataTables.bootstrap4.min.js" %}></script>
+
+
+
+<!-- App scripts -->
+<script src={%static "assets/scripts/luna.js" %}></script>
+<script src={%static "assets/scripts/ExportFunction.js" %}></script>
+<script src={%static "assets/scripts/SparklineJS.js" %}></script>
+
+</body>
+
+</html>
