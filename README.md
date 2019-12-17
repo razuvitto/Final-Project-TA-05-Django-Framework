@@ -72,4 +72,4 @@ python manage.py runserver
 
 * **TA-05**
 
-See also another project in [this](https://github.com/rajuvitto) url.
+See also another project in [this](https://github.com/razuvitto) url.
