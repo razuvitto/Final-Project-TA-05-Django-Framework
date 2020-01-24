@@ -4,9 +4,7 @@
 Coded with <small>❤️</small> by <a href="mailto:Rajuolivitto@gmail.com?Subject=Hello%20Raju" target="_top">Razuvitto</a>
 </p>
 
-# Penambangan Adaptif Aturan Asosiasi untuk Data Spatio-Temporal menggunakan Algoritma Optimized Closed FP-Growth 
-#####:earth_asia: 
-#####:rocket:
+# Penambangan Adaptif Aturan Asosiasi untuk Data Spatio-Temporal menggunakan Algoritma Optimized Closed FP-Growth
 
 This is TA-05 Final Project Implementation using Python language and Django Framework
 
