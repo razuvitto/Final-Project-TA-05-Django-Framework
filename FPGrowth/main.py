@@ -1,5 +1,8 @@
-from django.core.files.storage import default_storage
+# Coded with <3 Razuvitto
+# location : FPGrowth/main.py
+# 2018-2019
 
+from django.core.files.storage import default_storage
 import pandas as pd
 import numpy as np
 import pyfpgrowth
@@ -7,9 +10,6 @@ import random
 from operator import itemgetter
 import time
 import collections
-
-
-
 
 def main(dataset_name):
     start = time.time()
@@ -205,7 +205,7 @@ def main(dataset_name):
     data_for_visualization = pd.read_csv('FPGrowth/dataset/'+input_dataset_name, low_memory=False)
     data_for_process = pd.read_csv('FPGrowth/dataset/'+input_dataset_name, low_memory=False)
 
-    print("Sistem Memasuki tahap Data Preprocessing")
+    print("Step : Data Preprocessing (START)")
     # Check ID in Dataset
     
     ListOfId = []
@@ -435,7 +435,7 @@ def main(dataset_name):
 
     Dataset = Dataset
 
-    print("Step Data Preprocessing : Done")
+    print("Step : Data Preprocessing (DONE)")
     # =========================== Data After Data Transformation ===========================
     # Dataset.to_csv('Data after Data Preprocessing.csv', index = False)
 
@@ -464,7 +464,7 @@ def main(dataset_name):
             temp.append(data)
         datanya_data_transformation.append(temp)
 
-    print("Sistem Memasuki tahap Frequent Pattern Mining")
+    print("Step : Frequent Pattern Mining (START)")
     # 2. Rules Mining [ FP-Growth Algorithm ]
 
         # 2.1. Frequent Pattern Mining
@@ -480,21 +480,21 @@ def main(dataset_name):
     FrequentPattern = pyfpgrowth.find_frequent_patterns(data, minsup)
 
     FrequentFrame = pd.DataFrame(list(FrequentPattern.items()), columns=['Itemsets', 'support'])
-    print("Step Frequent Pattern Mining : Done")
+    print("Step : Frequent Pattern Mining (DONE)")
     # =========================== Frequent Pattern ===========================
     # FrequentFrame.to_csv('Frequent Pattern.csv' ,index=False)
-    print("Sistem Memasuki tahap Closed Pattern Mining")
+    print("Step : Closed Pattern Mining (START)")
 
     # =========================== Closed Pattern ===========================
         # 2.2. Closed Pattern Mining
     ClosedPattern = close_pattern(FrequentPattern)
     ClosedFrame = pd.DataFrame(list(ClosedPattern.items()), columns=['Itemset', 'Support'])
-    print("Step Closed Pattern Mining : Done")
+    print("Step : Closed Pattern Mining (DONE)")
     
     # ClosedFrame.to_csv('Closed Pattern.csv', index=False)
 
         # 2.3. Association Rules Mining
-    print("Sistem Memasuki tahap Association Rules Mining")
+    print("Step : Association Rules Mining (START)")
             # 2.3.1. Mining Association Rules
     AssociationRules = pyfpgrowth.generate_association_rules(ClosedPattern, 0.8)
 
@@ -548,7 +548,7 @@ def main(dataset_name):
     AssosiationFrame = AssosiationFrame[AssosiationFrame['sup(A)'] >= minsup]
     AssosiationFrame = AssosiationFrame[AssosiationFrame['sup(B)'] >= minsup]
     AssosiationFrame = AssosiationFrame[AssosiationFrame['sup(A U B)'] >= minsup]
-    print("Step Association Rules Mining : Done")
+    print("Step : Association Rules Mining (DONE)")
 
     ListOfDictOfRules = []
     const_len_rules = len(AssosiationFrame['Rules'])
@@ -598,7 +598,7 @@ def main(dataset_name):
     AssosiationRulesDataFrameForGA = AssosiationRulesDataFrameForGA[AssosiationRulesDataFrameForGA['sup(A)'] >= minsup]
     AssosiationRulesDataFrameForGA = AssosiationRulesDataFrameForGA[AssosiationRulesDataFrameForGA['sup(B)'] >= minsup]
     AssosiationRulesDataFrameForGA = AssosiationRulesDataFrameForGA[AssosiationRulesDataFrameForGA['sup(A U B)'] >= minsup]
-    print("Sistem Memasuki tahap Rules Optimization")
+    print("Step : Rules Optimization (START)")
     # Plot Kulc Score
     # KulcValue = AssosiationRulesDataFrameForGA['Kulczynski']
 
@@ -967,6 +967,8 @@ def main(dataset_name):
         BestAssociationRulesDataFrame = BestRules
 
 
+    print("Step : Rules Optimization (DONE)")
+
     BestRules = BestRules.reset_index(drop=True)
 
     ListOfDictOfRulesAfterOptimization = []
@@ -1009,3 +1011,4 @@ def main(dataset_name):
 
     return LengthOfDataset, LengthOfFrequentPattern, LengthOfClosedPattern, LengthOfAssociationRules, LengthOfAssociationRulesAfterOptimization, TimeExecution, DecreasePresentation, HTMLFrequentPattern, HTMLClosedPattern, ListOfDictOfRules, ListOfDictOfRulesAfterOptimization, PlotOfKulcBeforeOptimize, PlotOfKulcAfterOptimize, PointPlotFP, PointPlotGA, ListOfDictOfBinning, dataset_name, nama_kolomnya, datanya, indexnya, nama_kolomnya_data_selection, datanya_data_selection, nama_kolomnya_data_transformation, datanya_data_transformation  
 
+# End of File

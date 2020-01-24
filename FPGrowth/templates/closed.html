@@ -1,62 +1,64 @@
-{% extends "layouts.html" %}
-{% load static %}
-{% block content %}
+<!-- Coded with <3 Razuvitto
+location : FPGrowth/templates/closed.html
+2018-2019 -->
 
-    <section class="content">
-        <div class="container-fluid">
-             <!-- START CLOSED PATTERN TABLE -->
-             {% if HTMLClosedPattern %}
-             <div class="row">
-                 <div class="col-md-12">
-                     <div class="panel panel-filled">
-                         <div class="panel-heading">
-                             <div class="panel-tools">
-                                 <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
-                             </div>
-                             <h2 class="m-b-none" style="color: #1bbf89; font-size: 22px">
-                                    Closed Pattern Table
-                                </h2>
-                             
-                         </div>
-                         <div class="panel-body">
-                             <p>
-                                Closed Pattern will be displayed in the table below
-                             </p>
-                             <br>
-                             <table id="tableExample4" class="table table-striped table-hover table-responsive-sm">
-                                     <thead>
-                                     <tr>
-                                         <th>No</th>
-                                         <th>Rules</th>
-                                         <th>Support</th>
-                                        </tr>
-                                     </thead>
-                                     <tbody>
-                                             {% for x in HTMLClosedPattern  %}
-                                             <tr>
-                                                 <td>{{forloop.counter}}</td>
-                                                 <td>{{x.0}}</td>
-                                                 <td>{{x.1}}</td>
-                                             </tr>
-                                             {% endfor %}
-                                         </tbody>
-                                         <tfoot>
-                                                 <tr>
-                                                
-                                                 </tr>
-                                             </tfoot>
-                                 </table>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             {% endif %}
-             <!-- END CLOSED PATTERN TABLE -->
+{% extends "layouts.html" %} {% load static %} {% block content %}
 
-             
+<section class="content">
+    <div class="container-fluid">
+        <!-- START CLOSED PATTERN TABLE -->
+        {% if HTMLClosedPattern %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-filled">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        <h2 class="m-b-none" style="color: #1bbf89; font-size: 22px">
+                            Closed Pattern Table
+                        </h2>
 
-            
-            <!-- <div class="row">
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Closed Pattern will be displayed in the table below
+                        </p>
+                        <br>
+                        <table id="tableExample4" class="table table-striped table-hover table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Rules</th>
+                                    <th>Support</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for x in HTMLClosedPattern %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{x.0}}</td>
+                                    <td>{{x.1}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <!-- END CLOSED PATTERN TABLE -->
+
+
+
+
+        <!-- <div class="row">
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="row">
@@ -92,6 +94,8 @@
                     </div>
                 </div>
             </div> -->
-        </div>
-    </section>
+    </div>
+</section>
 {% endblock content %}
+
+<!-- End of File -->

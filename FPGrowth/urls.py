@@ -1,3 +1,7 @@
+# Coded with <3 Razuvitto
+# location : FPGrowth/urls.py
+# 2018-2019
+
 from django.urls import path
 from FPGrowth import views
 
@@ -15,3 +19,5 @@ urlpatterns = [
     path('data-selection', views.dataselection),
     path('data-transformation', views.datatransformation)
 ]
+
+# End of file

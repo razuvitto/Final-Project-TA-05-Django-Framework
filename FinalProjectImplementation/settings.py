@@ -1,3 +1,7 @@
+# Coded with <3 Razuvitto
+# location : FinalProjectImplementation/settings.py
+# 2018-2019
+
 """
 Django settings for FinalProjectImplementation project.
 
@@ -119,3 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# End of file

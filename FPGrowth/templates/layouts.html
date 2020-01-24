@@ -1,6 +1,11 @@
+<!-- Coded with <3 Razuvitto
+location : FPGrowth/templates/layouts.html
+2018-2019 -->
+
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +24,7 @@
     <link rel="stylesheet" href={%static "assets/vendor/datatables/datatables.min.css" %}/>
 
     <!-- App styles -->
-    <link rel="stylesheet" href={%static "assets/styles/pe-icons/pe-icon-7-stroke.css" %}/>
+    <link rel="stylesheet" href={%static "assets/styles/pe-icons/css/pe-icon-7-stroke.css" %}/>
     <link rel="stylesheet" href={%static "assets/styles/pe-icons/helper.css" %}/>
     <link rel="stylesheet" href={%static "assets/styles/stroke-icons/style.css" %}/>
     <link rel="stylesheet" href={%static "assets/styles/style.css" %}/>
@@ -28,131 +33,116 @@
     <link rel="stylesheet" href={%static "assets/styles/stroke-icons/stroke.woff" %}/>
 
 </head>
+
 <body>
-        <div class="wrapper">
-                <!-- Header-->
-                <nav class="navbar navbar-expand-md navbar-default fixed-top">
-                    <div class="navbar-header">
-                        <div id="mobile-menu">
-                            <div class="left-nav-toggle">
-                                <a href="#">
-                                    <i class="stroke-hamburgermenu"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <a class="navbar-brand" href="mainpage">
-                            FPGrowth
-                            <span>TA-05</span>
+    <div class="wrapper">
+        <!-- Header-->
+        <nav class="navbar navbar-expand-md navbar-default fixed-top">
+            <div class="navbar-header">
+                <div id="mobile-menu">
+                    <div class="left-nav-toggle">
+                        <a href="#">
+                            <i class="stroke-hamburgermenu"></i>
                         </a>
                     </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <div class="left-nav-toggle">
-                            <a href="">
-                                <i class="pe-7s-angle-left"></i>    
-                                
-                            </a>
+                </div>
+                <a class="navbar-brand" href="mainpage">
+                    FPGrowth
+                    <span>TA-05</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="left-nav-toggle">
+                    <a href="">
+                        <i class="pe-7s-angle-left"></i>
+                    </a>
+                </div>
+                <form class="navbar-form mr-auto">
+                    <!-- <input type="text" class="form-control" placeholder="Search data for analysis" style="width: 175px"> -->
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item profil-link">
+                        <a href="">
+                            <span class="profile-address"> </span>
+                            <img src={%static "assets/images/monkey.png" %} class="rounded-circle" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End header-->
+
+        <!-- Navigation-->
+        <aside class="navigation">
+            <nav>
+                <ul class="nav luna-nav">
+                    <li class="active">
+                        <a href="mainpage">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#uielements" data-toggle="collapse" aria-expanded="false">
+                            New Dataset<span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i> </span>
+                        </a>
+                        <ul id="uielements" class="nav nav-second collapse">
+                            <li><a href="/">Upload New Dataset</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-category">
+                        <h4>Algorithm</h4>
+                    </li>
+                    <li>
+                        <a href="#tables" data-toggle="collapse" aria-expanded="false">
+                            FP-Growth<span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i> </span>
+                        </a>
+                        <ul id="tables" class="nav nav-second collapse">
+                            <li><a href="frequent">Frequent Pattern</a></li>
+                            <li><a href="closed">Closed Pattern</a></li>
+                            <li><a href="rules">Rules</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#monitoring" data-toggle="collapse" aria-expanded="false">
+                            Genetic Algorithm<span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i>  </span>
+                        </a>
+                        <ul id="monitoring" class="nav nav-second collapse">
+                            <li><a href="optimizerules">Optimize Rules</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#forms" data-toggle="collapse" aria-expanded="false">
+                            Compare Algorithm<span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i>  </span>
+                        </a>
+                        <ul id="forms" class="nav nav-second collapse">
+                            <li><a href="compareresult">Result</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-category">
+                        <h4>Documentation</h4>
+                    </li>
+                    <li>
+                        <a href="#extras" data-toggle="collapse" aria-expanded="false">
+                            Data Preprocessing <span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i> </span>
+                        </a>
+                        <ul id="extras" class="nav nav-second collapse">
+                            <li><a href="data-cleaning">Data Cleaning</a></li>
+                            <li><a href="data-selection">Data Selection</a></li>
+                            <li><a href="data-transformation">Data Transformation</a></li>
+                            <li><a href="binning-data">Documentation Data</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-info">
+                        <i class="pe pe-7s-shield text-accent"></i>
+
+                        <div class="m-t-xs">
+                            <span class="c-white">TA-05</span> All right reserverd.
                         </div>
-                        <form class="navbar-form mr-auto">
-                            <!-- <input type="text" class="form-control" placeholder="Search data for analysis" style="width: 175px"> -->
-                        </form>
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item profil-link">
-                                <a href="">
-                                    <span class="profile-address"> </span>
-                                    <img src={%static "assets/images/monkey.png"  %} class="rounded-circle" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- End header-->
-        
-
-
-
-
-                <!-- Navigation-->
-    <aside class="navigation">
-                    <nav>
-                        <ul class="nav luna-nav">
-                            <li class="active">
-                                <a href="mainpage">Dashboard</a>
-                            </li>
-                            <li>
-                                    <a href="#uielements" data-toggle="collapse" aria-expanded="false">
-                                        New Dataset<span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i> </span>
-                                    </a>
-                                    <ul id="uielements" class="nav nav-second collapse">
-                                        <li><a href="/">Upload New Dataset</a></li>
-                                    </ul>
-                            </li>
-                            <li class="nav-category">
-                                <h4>Algorithm</h4>
-                            </li>
-                            <li>
-                                <a href="#tables" data-toggle="collapse" aria-expanded="false">
-                                    FP-Growth<span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i> </span>
-                                </a>
-                                <ul id="tables" class="nav nav-second collapse">
-                                    <li><a href="frequent">Frequent Pattern</a></li>
-                                    <li><a href="closed">Closed Pattern</a></li>
-                                    <li><a href="rules">Rules</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#monitoring" data-toggle="collapse" aria-expanded="false">
-                                    Genetic Algorithm<span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i>  </span>
-                                </a>
-                                <ul id="monitoring" class="nav nav-second collapse">
-                                    <li><a href="optimizerules">Optimize Rules</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#forms" data-toggle="collapse" aria-expanded="false">
-                                    Compare Algorithm<span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i>  </span>
-                                </a>
-                                <ul id="forms" class="nav nav-second collapse">
-                                    <li><a href="compareresult">Result</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-category">
-                                <h4>Documentation</h4>
-                            </li>
-                            <li>
-                                <a href="#extras" data-toggle="collapse" aria-expanded="false">
-                                    Data Preprocessing <span class="sub-nav-icon"> <i class="pe-7s-angle-right"></i> </span>
-                                </a>
-                                <ul id="extras" class="nav nav-second collapse">
-                                    <li><a href="data-cleaning">Data Cleaning</a></li>
-                                    <li><a href="data-selection">Data Selection</a></li>
-                                    <li><a href="data-transformation">Data Transformation</a></li>
-                                    <li><a href="binning-data">Documentation Data</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-info">
-                                <i class="pe pe-7s-shield text-accent"></i>
-            
-                                <div class="m-t-xs">
-                                    <span class="c-white">TA-05</span> All right reserverd.
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </aside>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
         <!-- End navigation-->
 
-
-
-
-
-
-
-
-               
-
-
-        {% block content %}
-        {% endblock content %}
+        {% block content %} {% endblock content %}
     </div>
 
     <!-- Vendor scripts -->
@@ -166,18 +156,15 @@
     <script src={%static "assets/vendor/flot/jquery.flot.spline.js" %}></script>
     <script src={%static "assets/vendor/datatables/datatables.min.js" %}></script>
     <script src={%static "assets/vendor/datatables/dataTables.bootstrap4.min.js" %}></script>
-    
-    
-    
+
     <!-- App scripts -->
     <script src={%static "assets/scripts/luna.js" %}></script>
     <script src={%static "assets/scripts/ExportFunction.js" %}></script>
     <script src={%static "assets/scripts/SparklineJS.js" %}></script>
     <script src={%static "assets/scripts/loader.js" %}></script>
     <script src={%static "assets/vendor/chart.js/dist/Chart.min.js" %}></script>
-    
- 
-    
-    </body>
-    
-    </html>
+
+</body>
+
+</html>
+<!-- End of file -->

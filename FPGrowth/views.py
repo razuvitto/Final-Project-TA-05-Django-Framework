@@ -1,3 +1,7 @@
+# Coded with <3 Razuvitto
+# location : FPGrowth/views.py
+# 2018-2019
+
 from django.shortcuts import render
 from FPGrowth import main
 
@@ -41,7 +45,4 @@ def dataselection(request):
 def datatransformation(request):
     return render(request,'previewdatatransformation.html', content)
 
-
-
-
-
+# End of file

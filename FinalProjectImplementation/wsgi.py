@@ -1,3 +1,7 @@
+# Coded with <3 Razuvitto
+# location : FinalProjectImplementation/wsgi.py
+# 2018-2019
+
 """
 WSGI config for FinalProjectImplementation project.
 
@@ -14,3 +18,5 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'FinalProjectImplementation.settings')
 
 application = get_wsgi_application()
+
+# End of file
